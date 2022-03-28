@@ -1,25 +1,26 @@
 import "./styles.css";
+import { Parallax } from "react-parallax";
+
+const inlineStyle = {
+  background: "#fff",
+  left: "50%",
+  top: "50%",
+  position: "absolute",
+  padding: "20px",
+  transform: "translate(-50%, -50%)",
+};
 
 function App() {
   return (
     <div>
-      <img src="/back.jpg" alt="background" />
-      <div style={styles.orb}></div>
+      <Parallax bgImage="/back2.jpg" strength={300}>
+        <div style={{ height: "700px" }}>
+          <div style={inlineStyle}>HTML inside the parallax</div>
+        </div>
+      </Parallax>
+      <div style={{ height: "100vh" }}></div>
     </div>
   );
 }
-
-const styles = {
-  orb: {
-    width: "300px",
-    height: "300px",
-    borderRadius: "50%",
-    position: "fixed",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    backgroundColor: "green",
-  },
-};
 
 export default App;
